@@ -1,3 +1,7 @@
+g++
+libblas-dev
+liblapack-dev
+gfortran
 numpy
 spams
 torch
