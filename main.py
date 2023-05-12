@@ -1,11 +1,11 @@
 import streamlit as st
 # from PIL import Image
-# import numpy as np
+import numpy as np
 # # import stain_utils as utils
 # # import stainNorm_Reinhard
 # # import stainNorm_Macenko
-# import stainNorm_Vahadane
-# import cv2
+import stainNorm_Vahadane
+import cv2
 # import torch
 # import torch.nn as nn
 # import torchvision
