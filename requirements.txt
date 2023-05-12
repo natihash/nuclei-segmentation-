@@ -1,9 +1,9 @@
 # build-essential
-libblas-dev
-liblapack-dev
-gfortran
+# libblas-dev
+# liblapack-dev
+# gfortran
 numpy
-spams
+# spams
 torch
 torchvision
 opencv-python-headless==4.5.4.58
