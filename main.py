@@ -4,7 +4,7 @@ import numpy as np
 # # import stain_utils as utils
 # # import stainNorm_Reinhard
 # # import stainNorm_Macenko
-import stainNorm_Vahadane
+# import stainNorm_Vahadane
 import cv2
 # import torch
 # import torch.nn as nn
@@ -24,8 +24,8 @@ uploaded_file = st.file_uploader("Choose an image...", type=["jpeg", "jpg", "tif
 if uploaded_file is not None:
     image = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    n = stainNorm_Vahadane.Normalizer()
-    hem = n.hematoxylin(image)
+#     n = stainNorm_Vahadane.Normalizer()
+#     hem = n.hematoxylin(image)
 
 #     image = torch.from_numpy(image/255)
 #     image = image.permute(2, 0, 1)
@@ -36,4 +36,4 @@ if uploaded_file is not None:
 
 #     image = image.to(device, dtype=torch.float32)
 #     aa, bb = model(image.unsqueeze(0))
-    st.image(hem, caption="Uploaded Image")
+    st.image(image, caption="Uploaded Image")
