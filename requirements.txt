@@ -6,4 +6,4 @@
 #streamlit
 #gdown
 #scikit-image
-#numpy==1.20.3
+numpy==1.20.3
