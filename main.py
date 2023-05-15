@@ -14,11 +14,15 @@ import torchvision
 from models import NestedUNet
 from skimage import measure
 from skimage.segmentation import watershed
+import os
 
-# url="https://drive.google.com/uc?id=1OuVDKB1ElJ3DZyV-vSHULmRrUKPwIxxp"
-# output_f = "my_model"
-# gdown.download(url, output_f, quiet=False)
-# st.write("done")
+if os.path.isfile("my_model"):
+	pass
+else:
+	url="https://drive.google.com/uc?id=1OuVDKB1ElJ3DZyV-vSHULmRrUKPwIxxp"
+	output_f = "my_model"
+	gdown.download(url, output_f, quiet=False)
+	st.write("done")
 
 st.title("Instance nuclei segmentation")
 uploaded_file = st.file_uploader("Choose an image...", type=["jpeg", "jpg", "tif", "png"])
