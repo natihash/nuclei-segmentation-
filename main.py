@@ -75,42 +75,42 @@ if uploaded_file is not None:
 	image = torch.cat((image, hem), 0)
 	image = image.to(device, dtype=torch.float32)
 
-# 	aa, bb = moddy(image.unsqueeze(0))
-# 	aa = torch.sigmoid(aa)
-# 	bb = torch.sigmoid(bb)
-# 	# st.write(str(aa.shape))
-# 	# st.write(str(bb.shape))
-# 	aa = 255*aa.detach().numpy()[0][0]
-# 	bb = 255*bb.detach().numpy()[0][0]
-# 	p_sema = 1*(aa/255.0>0.5)
-# 	p_mark = 1*(bb/255.0>0.5)
-# 	# aa = 255*(aa>0.5)
-# 	aa = aa.astype(np.uint8)
-# 	bb = bb.astype(np.uint8)
+	aa, bb = moddy(image.unsqueeze(0))
+	aa = torch.sigmoid(aa)
+	bb = torch.sigmoid(bb)
+	# st.write(str(aa.shape))
+	# st.write(str(bb.shape))
+	aa = 255*aa.detach().numpy()[0][0]
+	bb = 255*bb.detach().numpy()[0][0]
+	p_sema = 1*(aa/255.0>0.5)
+	p_mark = 1*(bb/255.0>0.5)
+	# aa = 255*(aa>0.5)
+	aa = aa.astype(np.uint8)
+	bb = bb.astype(np.uint8)
 
-# 	aa = cv2.applyColorMap(aa, cv2.COLORMAP_VIRIDIS)
-# 	bb = cv2.applyColorMap(bb, cv2.COLORMAP_VIRIDIS)
-# 	# st.write("The two Outputs of the Model")
-# 	st.write("<h1 style='text-align: center; font-weight: bold;font-size: 20px;'>The two outputs of the model</h1>", unsafe_allow_html=True)
+	aa = cv2.applyColorMap(aa, cv2.COLORMAP_VIRIDIS)
+	bb = cv2.applyColorMap(bb, cv2.COLORMAP_VIRIDIS)
+	# st.write("The two Outputs of the Model")
+	st.write("<h1 style='text-align: center; font-weight: bold;font-size: 20px;'>The two outputs of the model</h1>", unsafe_allow_html=True)
 
-# 	# aa = np.repeat(aa[:, :, np.newaxis], 3, axis=2)
-# 	col3, col4 = st.columns(2)
-# 	with col3:
-# 		st.image(aa, caption="semantic segmentation output", clamp=True)
-# 	with col4:
-# 		st.image(bb, caption="nuclei marker output", clamp=True)
+	# aa = np.repeat(aa[:, :, np.newaxis], 3, axis=2)
+	col3, col4 = st.columns(2)
+	with col3:
+		st.image(aa, caption="semantic segmentation output", clamp=True)
+	with col4:
+		st.image(bb, caption="nuclei marker output", clamp=True)
 
-# 	labels2, im_bord = mywater(p_sema, p_mark, im_bord)
-# 	# st.write("Instance Segmentation Results After Watershed")
-# 	st.write("<h1 style='text-align: center; font-weight: bold;font-size: 20px;'>Instance Segmentation Results After Watershed</h1>", unsafe_allow_html=True)
+	labels2, im_bord = mywater(p_sema, p_mark, im_bord)
+	# st.write("Instance Segmentation Results After Watershed")
+	st.write("<h1 style='text-align: center; font-weight: bold;font-size: 20px;'>Instance Segmentation Results After Watershed</h1>", unsafe_allow_html=True)
 
-# 	labels2 = labels2.astype(np.uint8)
-# 	im_bord = im_bord.astype(np.uint8)
-# 	labels2 = cv2.applyColorMap(labels2, cv2.COLORMAP_VIRIDIS)
-# 	col5, col6 = st.columns(2)
-# 	with col5:
-# 		st.image(labels2, caption="Integer encoded", clamp=True)
-# 	with col6:
-# 		st.image(im_bord, caption="borders labelled", clamp=True)
-# 	# st.write(str(np.unique(aa)))
-# 	# st.write(str(type(aa)))
+	labels2 = labels2.astype(np.uint8)
+	im_bord = im_bord.astype(np.uint8)
+	labels2 = cv2.applyColorMap(labels2, cv2.COLORMAP_VIRIDIS)
+	col5, col6 = st.columns(2)
+	with col5:
+		st.image(labels2, caption="Integer encoded", clamp=True)
+	with col6:
+		st.image(im_bord, caption="borders labelled", clamp=True)
+	# st.write(str(np.unique(aa)))
+	# st.write(str(type(aa)))
