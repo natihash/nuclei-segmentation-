@@ -15,10 +15,10 @@ from models import NestedUNet
 from skimage import measure
 from skimage.segmentation import watershed
 
-url="https://drive.google.com/uc?id=1OuVDKB1ElJ3DZyV-vSHULmRrUKPwIxxp"
-output_f = "my_model"
-gdown.download(url, output_f, quiet=False)
-st.write("done")
+# url="https://drive.google.com/uc?id=1OuVDKB1ElJ3DZyV-vSHULmRrUKPwIxxp"
+# output_f = "my_model"
+# gdown.download(url, output_f, quiet=False)
+# st.write("done")
 
 st.title("Instance nuclei segmentation")
 uploaded_file = st.file_uploader("Choose an image...", type=["jpeg", "jpg", "tif", "png"])
@@ -75,7 +75,7 @@ if uploaded_file is not None:
 	image = torch.cat((image, hem), 0)
 	image = image.to(device, dtype=torch.float32)
 
-	aa, bb = moddy(image.unsqueeze(0))
+# 	aa, bb = moddy(image.unsqueeze(0))
 # 	aa = torch.sigmoid(aa)
 # 	bb = torch.sigmoid(bb)
 # 	# st.write(str(aa.shape))
