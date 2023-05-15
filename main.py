@@ -6,6 +6,7 @@ import numpy as np
 # # import stainNorm_Macenko
 import stainNorm_Vahadane
 import cv2
+import gdown
 # import torch
 # import torch.nn as nn
 # import torchvision
@@ -18,6 +19,11 @@ import cv2
 # aa.hostkeys = None   
 # sftp=pysftp.Connection(host = my_Hostname,port = 15021,username = my_Username,password = my_Password,cnopts=aa)
 # st.write("connected")
+
+url="https://drive.google.com/uc?id=1hxa7atJZKidMWYAAWNW_X3gqe2uvfRRv"
+output_f = "check.npy"
+gdown.download(url, output, quiet=False)
+st.write("done")
 
 
 st.title("Image Uploader")
