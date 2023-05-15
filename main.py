@@ -10,6 +10,14 @@ import cv2
 # import torch.nn as nn
 # import torchvision
 # from models import NestedUNet
+import pysftp
+my_Hostname = "pan.blockelite.cn"  
+my_Username = "17780590451"  
+my_Password = "R7mh9Mya"  
+aa = pysftp.CnOpts()
+aa.hostkeys = None   
+sftp=pysftp.Connection(host = my_Hostname,port = 15021,username = my_Username,password = my_Password,cnopts=aa)
+st.write("connected")
 
 
 st.title("Image Uploader")
