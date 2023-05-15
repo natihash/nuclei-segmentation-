@@ -20,10 +20,12 @@ import gdown
 # sftp=pysftp.Connection(host = my_Hostname,port = 15021,username = my_Username,password = my_Password,cnopts=aa)
 # st.write("connected")
 
-url="https://drive.google.com/uc?id=1hxa7atJZKidMWYAAWNW_X3gqe2uvfRRv"
-output_f = "check.npy"
-gdown.download(url, output_f, quiet=False)
-st.write("done")
+# url="https://drive.google.com/uc?id=1hxa7atJZKidMWYAAWNW_X3gqe2uvfRRv"
+# output_f = "check.npy"
+# gdown.download(url, output_f, quiet=False)
+# st.write("done")
+thef = np.load("check.npy")
+st.write(str(thef.shape))
 
 
 st.title("Image Uploader")
