@@ -85,7 +85,7 @@ if uploaded_file is not None:
 	p_sema = 1*(aa/255.0>0.5)
 	p_mark = 1*(bb/255.0>0.5)
 	# aa = 255*(aa>0.5)
-	cc = 255.0*(1.0*(aa>100)+1.0*(bb>100))/2.0
+	cc = 255.0*(1.0*(aa>127)+1.0*(bb>128))/2.0
 	aa = aa.astype(np.uint8)
 	bb = bb.astype(np.uint8)
 	cc = cc.astype(np.uint8)
