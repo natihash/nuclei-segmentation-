@@ -85,20 +85,25 @@ if uploaded_file is not None:
 	p_sema = 1*(aa/255.0>0.5)
 	p_mark = 1*(bb/255.0>0.5)
 	# aa = 255*(aa>0.5)
+	cc = 255*((aa>100)+(bb>100))/2
 	aa = aa.astype(np.uint8)
 	bb = bb.astype(np.uint8)
+	cc = cc.astype(np.uint8)
 
 	aa = cv2.applyColorMap(aa, cv2.COLORMAP_VIRIDIS)
 	bb = cv2.applyColorMap(bb, cv2.COLORMAP_VIRIDIS)
+	cc = cv2.applyColorMap(cc, cv2.COLORMAP_VIRIDIS)
 	# st.write("The two Outputs of the Model")
 	st.write("<h1 style='text-align: center; font-weight: bold;font-size: 20px;'>The two outputs of the model</h1>", unsafe_allow_html=True)
 
 	# aa = np.repeat(aa[:, :, np.newaxis], 3, axis=2)
-	col3, col4 = st.columns(2)
+	col3, col4, colm = st.columns(3)
 	with col3:
-		st.image(aa, caption="semantic segmentation output", clamp=True)
+		st.image(aa, caption="semantic output", clamp=True)
 	with col4:
 		st.image(bb, caption="nuclei marker output", clamp=True)
+	with colm:
+		st.image(cc, caption="marker-border", clamp=True)
 
 	labels2, im_bord = mywater(p_sema, p_mark, im_bord)
 	# st.write("Instance Segmentation Results After Watershed")
