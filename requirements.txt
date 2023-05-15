@@ -7,4 +7,5 @@
 # Pillow
 # streamlit
 # simplejson
-paramiko
+# paramiko
+pysftp
