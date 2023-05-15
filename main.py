@@ -56,6 +56,7 @@ def mywater(p_sema2, p_mark2, im_bord2):
 
 if uploaded_file is not None:
 	image1 = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1)
+	image1 = cv2.resize(image1, (128, 128))
 	image = cv2.cvtColor(image1, cv2.COLOR_BGR2RGB)
 	im_bord = np.copy(image)
 	# st.image(image, caption="sghj Image")
