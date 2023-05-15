@@ -1,5 +1,5 @@
 # numpy
-# numpy==1.20.3
+numpy==1.20.3
 # spams
 # torch
 # torchvision
@@ -10,4 +10,4 @@
 # paramiko
 # pysftp
 # gdown
-scikit-image
+# scikit-image
