@@ -7,9 +7,9 @@ import numpy as np
 import stainNorm_Vahadane
 import cv2
 import gdown
-# import torch
-# import torch.nn as nn
-# import torchvision
+import torch
+import torch.nn as nn
+import torchvision
 from models import NestedUNet
 
 
