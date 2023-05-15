@@ -1,13 +1,9 @@
-# numpy
+spams
+torch
+torchvision
+opencv-python-headless==4.5.4.58
+Pillow
+streamlit
+gdown
+scikit-image
 numpy==1.20.3
-# spams
-# torch
-# torchvision
-# opencv-python-headless==4.5.4.58
-# Pillow
-# streamlit
-# simplejson
-# paramiko
-# pysftp
-# gdown
-# scikit-image
