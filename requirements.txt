@@ -9,4 +9,5 @@
 # simplejson
 # paramiko
 # pysftp
-gdown
+# gdown
+scikit-image
