@@ -75,7 +75,7 @@ if uploaded_file is not None:
 	image = torch.cat((image, hem), 0)
 	image = image.to(device, dtype=torch.float32)
 
-# 	aa, bb = moddy(image.unsqueeze(0))
+	aa, bb = moddy(image.unsqueeze(0))
 # 	aa = torch.sigmoid(aa)
 # 	bb = torch.sigmoid(bb)
 # 	# st.write(str(aa.shape))
