@@ -12,6 +12,7 @@ import torch.nn as nn
 import torchvision
 from models import NestedUNet
 from skimage import measure
+from skimage.segmentation import watershed
 
 
 # url="https://drive.google.com/uc?id=1OuVDKB1ElJ3DZyV-vSHULmRrUKPwIxxp"
