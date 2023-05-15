@@ -22,7 +22,7 @@ import gdown
 
 url="https://drive.google.com/uc?id=1hxa7atJZKidMWYAAWNW_X3gqe2uvfRRv"
 output_f = "check.npy"
-gdown.download(url, output, quiet=False)
+gdown.download(url, output_f, quiet=False)
 st.write("done")
 
 
