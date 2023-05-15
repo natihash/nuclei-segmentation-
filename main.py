@@ -11,6 +11,7 @@ import torch
 import torch.nn as nn
 import torchvision
 from models import NestedUNet
+from skimage import measure
 
 
 # url="https://drive.google.com/uc?id=1OuVDKB1ElJ3DZyV-vSHULmRrUKPwIxxp"
