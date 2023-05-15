@@ -94,7 +94,7 @@ if uploaded_file is not None:
 	bb = cv2.applyColorMap(bb, cv2.COLORMAP_VIRIDIS)
 	cc = cv2.applyColorMap(cc, cv2.COLORMAP_VIRIDIS)
 	# st.write("The two Outputs of the Model")
-	st.write("<h1 style='text-align: center; font-weight: bold;font-size: 20px;'>The two outputs of the model</h1>", unsafe_allow_html=True)
+	st.write("<h1 style='text-align: center; font-weight: bold;font-size: 20px;'>The outputs of the model</h1>", unsafe_allow_html=True)
 
 	# aa = np.repeat(aa[:, :, np.newaxis], 3, axis=2)
 	col3, col4, colm = st.columns(3)
