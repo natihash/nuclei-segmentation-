@@ -28,7 +28,7 @@ else:
 st.title("Instance nuclei segmentation")
 # uploaded_file = st.file_uploader("Choose an image...", type=["jpeg", "jpg", "tif", "png"])
 options = ["select image below"]
-img_list = glob.glob("MoNuSeg_test/*.jpeg")
+img_list = glob.glob("MoNuSeg_test/*.png")
 for i in range(len(img_list)):
 	options.append(str(i))
 selected_options = st.selectbox("select an image from the MoNUSeg test set below", options)
