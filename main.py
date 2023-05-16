@@ -59,7 +59,8 @@ def mywater(p_sema2, p_mark2, im_bord2):
 	for i in np.unique(labels)[1:]:
 		temp = 1.0 * (labels == i)
 		labels[labels == i] = random.randint(20, 255)
-		temp = temp - cv2.erode(temp, np.ones((3, 3)), iterations=2)
+		# temp = temp - cv2.erode(temp, np.ones((3, 3)), iterations=2)
+		temp = cv2.dilate(temp, np.ones((3, 3)), iterations=2) - temp
 		im_bord2[temp > 0] = (0, 0, 255)
 	return labels, im_bord2
 
