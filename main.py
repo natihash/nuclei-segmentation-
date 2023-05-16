@@ -15,6 +15,7 @@ from models import NestedUNet
 from skimage import measure
 from skimage.segmentation import watershed
 import os
+import glob
 
 if os.path.isfile("my_model"):
 	pass
@@ -25,7 +26,12 @@ else:
 	st.write("done")
 
 st.title("Instance nuclei segmentation")
-uploaded_file = st.file_uploader("Choose an image...", type=["jpeg", "jpg", "tif", "png"])
+# uploaded_file = st.file_uploader("Choose an image...", type=["jpeg", "jpg", "tif", "png"])
+options = ["select image below"]
+img_list = glob.glob("MoNuSeg_test/*.jpeg")
+for i in range(len(img_list)):
+	options.append(str(i))
+selected_options = st.selectbox("select an image from the MoNUSeg test set below", options)
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 @st.cache_resource
@@ -58,8 +64,10 @@ def mywater(p_sema2, p_mark2, im_bord2):
 	return labels, im_bord2
 
 
-if uploaded_file is not None:
-	image1 = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1)
+# if uploaded_file is not None:
+if selected_options != "select image below":
+	# image1 = cv2.imdecode(np.frombuffer(uploaded_file.read(), np.uint8), 1)
+	image1 = cv2.imread(img_list[int(selected_options)])
 	image1 = cv2.resize(image1, (128, 128))
 	image = cv2.cvtColor(image1, cv2.COLOR_BGR2RGB)
 	im_bord = np.copy(image)
